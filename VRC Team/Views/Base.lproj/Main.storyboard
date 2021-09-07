@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="lAc-AQ-ltb">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="lAc-AQ-ltb">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -31,12 +33,12 @@
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="6o9-tR-1d1">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <color key="separatorColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="separatorColor" systemColor="systemBackgroundColor"/>
                         <searchBar key="tableHeaderView" contentMode="redraw" showsCancelButton="YES" id="0fc-Ji-1sF">
                             <rect key="frame" x="0.0" y="0.0" width="414" height="56"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                            <color key="barTintColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            <color key="barTintColor" systemColor="systemBackgroundColor"/>
                             <textInputTraits key="textInputTraits"/>
                             <scopeButtonTitles>
                                 <string>Title</string>
@@ -62,20 +64,87 @@
         <scene sceneID="Z56-Ti-Eqx">
             <objects>
                 <tableViewController id="yax-N8-xDq" customClass="TeamMainInfoViewController" customModule="VRC_Team" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="Epm-1f-Aen">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="insetGrouped" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="Epm-1f-Aen">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <connections>
                             <outlet property="dataSource" destination="yax-N8-xDq" id="8Aa-3u-KWV"/>
                             <outlet property="delegate" destination="yax-N8-xDq" id="zZb-Yx-LaH"/>
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Team Number" id="Fai-zo-0Pn"/>
+                    <connections>
+                        <segue destination="13m-Z5-9BY" kind="show" identifier="TeamToSeasonPerformanceSegue" id="Jo1-gF-Pb1"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PWd-RX-Eov" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1710.144927536232" y="28.794642857142854"/>
+        </scene>
+        <!--Team Number: Season-->
+        <scene sceneID="5MK-Pp-gxb">
+            <objects>
+                <viewController id="13m-Z5-9BY" customClass="SeasonViewController" customModule="VRC_Team" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="PT3-eR-zEn">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="6iu-hx-iHz">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <sections/>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="5xg-7G-GEN"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="6iu-hx-iHz" firstAttribute="trailing" secondItem="5xg-7G-GEN" secondAttribute="trailing" id="25x-Rl-wJc"/>
+                            <constraint firstItem="6iu-hx-iHz" firstAttribute="top" secondItem="5xg-7G-GEN" secondAttribute="top" id="8JB-BQ-UOF"/>
+                            <constraint firstItem="6iu-hx-iHz" firstAttribute="leading" secondItem="5xg-7G-GEN" secondAttribute="leading" id="W4S-Vu-4vk"/>
+                            <constraint firstItem="6iu-hx-iHz" firstAttribute="bottom" secondItem="5xg-7G-GEN" secondAttribute="bottom" id="XEp-Rr-EFc"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Team Number: Season" id="GIq-9e-mYX"/>
+                    <connections>
+                        <outlet property="tableView" destination="6iu-hx-iHz" id="ymz-fz-nIU"/>
+                        <segue destination="ABQ-Yj-WRd" kind="show" identifier="EventsToMatchesSegue" id="QBo-XL-OHS"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bsX-3c-OKu" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2544.9275362318845" y="28.794642857142854"/>
+        </scene>
+        <!--Matches-->
+        <scene sceneID="w3y-Mr-gyr">
+            <objects>
+                <tableViewController id="ABQ-Yj-WRd" customClass="MatchesViewController" customModule="VRC_Team" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelectionDuringEditing="YES" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="7pb-Rd-czB">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="b24-eW-dBe">
+                                <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="b24-eW-dBe" id="jld-M6-U3X">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="ABQ-Yj-WRd" id="usa-0R-5q7"/>
+                            <outlet property="delegate" destination="ABQ-Yj-WRd" id="UaJ-NN-5Jn"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Matches" largeTitleDisplayMode="never" id="cul-3o-3d8"/>
+                    <connections>
+                        <segue destination="yax-N8-xDq" kind="show" identifier="MatchesToTeamSegue" id="5Rj-J8-6YF"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ksL-LC-9zY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3332" y="29"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="p5x-Az-1JU">
@@ -83,6 +152,7 @@
                 <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="lAc-AQ-ltb" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="TX8-sC-vm1">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
@@ -113,8 +183,8 @@
                                 </segments>
                             </segmentedControl>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="qob-VT-0TZ"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Item" id="Oog-Sv-Hkx"/>
                 </viewController>
@@ -122,5 +192,31 @@
             </objects>
             <point key="canvasLocation" x="-10" y="739"/>
         </scene>
+        <!--Team Number-->
+        <scene sceneID="spr-wj-5Ze">
+            <objects>
+                <tableViewController id="7H3-aw-gLJ" customClass="TeamMainInfoViewController" customModule="VRC_Team" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="insetGrouped" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="C4J-Kv-I1A">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <connections>
+                            <outlet property="dataSource" destination="7H3-aw-gLJ" id="w1M-Y1-DFz"/>
+                            <outlet property="delegate" destination="7H3-aw-gLJ" id="LoY-0E-dwj"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Team Number" id="9cX-ZC-VZM"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qbH-0I-o85" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3332" y="768"/>
+        </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="5Rj-J8-6YF"/>
+    </inferredMetricsTieBreakers>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
 </document>

@@ -23,6 +23,15 @@
 		1B52E57B24E21D3200D8F02B /* TeamInfoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B52E57924E21D3200D8F02B /* TeamInfoCell.swift */; };
 		1B52E57C24E21D3200D8F02B /* TeamInfoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1B52E57A24E21D3200D8F02B /* TeamInfoCell.xib */; };
 		1B52E58224E2717500D8F02B /* SeasonInfoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B52E58124E2717500D8F02B /* SeasonInfoModel.swift */; };
+		1B91346B25F57C7800ED391C /* MatchInfoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B91346A25F57C7800ED391C /* MatchInfoModel.swift */; };
+		1B948A4625685CF10030948F /* EventInformationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B948A4425685CF10030948F /* EventInformationCell.swift */; };
+		1B948A4725685CF10030948F /* EventInformationCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1B948A4525685CF10030948F /* EventInformationCell.xib */; };
+		1BC388B02592DAC7007EFA3A /* MatchInfoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BC388AE2592DAC7007EFA3A /* MatchInfoCell.swift */; };
+		1BC388B12592DAC7007EFA3A /* MatchInfoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1BC388AF2592DAC7007EFA3A /* MatchInfoCell.xib */; };
+		1BC388B425941B05007EFA3A /* MatchesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BC388B325941B05007EFA3A /* MatchesViewController.swift */; };
+		1BD628CE256723FC0037FDBB /* RatingCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1BD628CD256723FC0037FDBB /* RatingCell.xib */; };
+		1BD628D0256724EC0037FDBB /* RatingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BD628CF256724EC0037FDBB /* RatingCell.swift */; };
+		1BD628D225674C080037FDBB /* SeasonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BD628D125674C080037FDBB /* SeasonViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +53,15 @@
 		1B52E57924E21D3200D8F02B /* TeamInfoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamInfoCell.swift; sourceTree = "<group>"; };
 		1B52E57A24E21D3200D8F02B /* TeamInfoCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TeamInfoCell.xib; sourceTree = "<group>"; };
 		1B52E58124E2717500D8F02B /* SeasonInfoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeasonInfoModel.swift; sourceTree = "<group>"; };
+		1B91346A25F57C7800ED391C /* MatchInfoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchInfoModel.swift; sourceTree = "<group>"; };
+		1B948A4425685CF10030948F /* EventInformationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventInformationCell.swift; sourceTree = "<group>"; };
+		1B948A4525685CF10030948F /* EventInformationCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EventInformationCell.xib; sourceTree = "<group>"; };
+		1BC388AE2592DAC7007EFA3A /* MatchInfoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchInfoCell.swift; sourceTree = "<group>"; };
+		1BC388AF2592DAC7007EFA3A /* MatchInfoCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MatchInfoCell.xib; sourceTree = "<group>"; };
+		1BC388B325941B05007EFA3A /* MatchesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchesViewController.swift; sourceTree = "<group>"; };
+		1BD628CD256723FC0037FDBB /* RatingCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RatingCell.xib; sourceTree = "<group>"; };
+		1BD628CF256724EC0037FDBB /* RatingCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingCell.swift; sourceTree = "<group>"; };
+		1BD628D125674C080037FDBB /* SeasonViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeasonViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,6 +114,7 @@
 				1B52E56924E0F7F100D8F02B /* Stats.swift */,
 				1B52E57124E19C9100D8F02B /* TeamsTableInfo.swift */,
 				1B52E58124E2717500D8F02B /* SeasonInfoModel.swift */,
+				1B91346A25F57C7800ED391C /* MatchInfoModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -105,6 +124,8 @@
 			children = (
 				1B52E55624E0F4B800D8F02B /* TeamsListViewController.swift */,
 				1B52E57724E1EBAB00D8F02B /* TeamMainInfoViewController.swift */,
+				1BD628D125674C080037FDBB /* SeasonViewController.swift */,
+				1BC388B325941B05007EFA3A /* MatchesViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -133,6 +154,12 @@
 			children = (
 				1B52E57924E21D3200D8F02B /* TeamInfoCell.swift */,
 				1B52E57A24E21D3200D8F02B /* TeamInfoCell.xib */,
+				1BD628CD256723FC0037FDBB /* RatingCell.xib */,
+				1BD628CF256724EC0037FDBB /* RatingCell.swift */,
+				1B948A4425685CF10030948F /* EventInformationCell.swift */,
+				1B948A4525685CF10030948F /* EventInformationCell.xib */,
+				1BC388AE2592DAC7007EFA3A /* MatchInfoCell.swift */,
+				1BC388AF2592DAC7007EFA3A /* MatchInfoCell.xib */,
 			);
 			path = TeamUIItems;
 			sourceTree = "<group>";
@@ -197,8 +224,11 @@
 			files = (
 				1B52E57624E19EA500D8F02B /* TeamsListCell.xib in Resources */,
 				1B52E57C24E21D3200D8F02B /* TeamInfoCell.xib in Resources */,
+				1B948A4725685CF10030948F /* EventInformationCell.xib in Resources */,
+				1BC388B12592DAC7007EFA3A /* MatchInfoCell.xib in Resources */,
 				1B52E55F24E0F4BE00D8F02B /* LaunchScreen.storyboard in Resources */,
 				1B52E55C24E0F4BE00D8F02B /* Assets.xcassets in Resources */,
+				1BD628CE256723FC0037FDBB /* RatingCell.xib in Resources */,
 				1B52E55A24E0F4B800D8F02B /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -210,17 +240,23 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1BD628D0256724EC0037FDBB /* RatingCell.swift in Sources */,
 				1B52E55724E0F4B800D8F02B /* TeamsListViewController.swift in Sources */,
 				1B52E57824E1EBAB00D8F02B /* TeamMainInfoViewController.swift in Sources */,
+				1B948A4625685CF10030948F /* EventInformationCell.swift in Sources */,
 				1B52E58224E2717500D8F02B /* SeasonInfoModel.swift in Sources */,
+				1B91346B25F57C7800ED391C /* MatchInfoModel.swift in Sources */,
 				1B52E56A24E0F7F100D8F02B /* Stats.swift in Sources */,
 				1B52E55324E0F4B800D8F02B /* AppDelegate.swift in Sources */,
 				1B52E57B24E21D3200D8F02B /* TeamInfoCell.swift in Sources */,
 				1B52E56824E0F7D700D8F02B /* TeamsMultipleModel.swift in Sources */,
+				1BC388B02592DAC7007EFA3A /* MatchInfoCell.swift in Sources */,
+				1BC388B425941B05007EFA3A /* MatchesViewController.swift in Sources */,
 				1B52E57524E19EA500D8F02B /* TeamsListCell.swift in Sources */,
 				1B52E57224E19C9100D8F02B /* TeamsTableInfo.swift in Sources */,
 				1B52E55524E0F4B800D8F02B /* SceneDelegate.swift in Sources */,
 				1B52E57024E101A400D8F02B /* Constants.swift in Sources */,
+				1BD628D225674C080037FDBB /* SeasonViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -367,6 +403,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 8H9ZJ4664M;
 				INFOPLIST_FILE = "VRC Team/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -385,6 +422,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 8H9ZJ4664M;
 				INFOPLIST_FILE = "VRC Team/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

@@ -9,53 +9,44 @@
 import Foundation
 
 protocol TeamModelDelegate {
-    func didUpdateTeam(_ teamModel: TeamModel, stats: TeamInfo)
-}
-
-struct TeamModel {
-    
-    var delegate: TeamModelDelegate?
-    
-    func fetchData(team: String, group: DispatchGroup) {
-        
-        if let url = URL(string: "https://api.vexdb.io/v1/get_teams?team=\(team)") {
-            let session = URLSession(configuration: .default)
-            
-            let task = session.dataTask(with: url) { (data, response, error) in
-                if error == nil {
-                    let decoder = JSONDecoder()
-                    if let safeData = data {
-                        DispatchQueue.main.async {
-                            do {
-                                defer {
-                                    group.leave()
-                                    print("Left")
-                                }
-                                let statsGotten = try decoder.decode(TeamStats.self, from: safeData)
-                                self.delegate?.didUpdateTeam(self, stats: statsGotten.result[0])
-                            } catch {
-                                print(error)
-                            }
-                        }
-                    }
-                }
-            }
-            task.resume()
-        }
-
-    }
-    
-}
-
-protocol TeamsMultipleModelDelegate {
     //func didUpdateInfo(_ teamModel: TeamModel, stats: [TeamInfo])
     func didUpdateTeams(_ teamModel: TeamsMultipleModel, stats: [TeamInfo])
 }
 
-//MARK: - Fetch All Teams Helper Methods
 struct TeamsMultipleModel {
     
-    var delegate: TeamsMultipleModelDelegate?
+    var delegate: TeamModelDelegate?
+    
+//    func fetchData() {
+//        if let url = URL(string: "https://api.vexdb.io/v1/get_teams?team=33A") {
+//            let session = URLSession(configuration: .default)
+//            let task = session.dataTask(with: url) { (data, response, error) in
+//                if error == nil {
+//                    let decoder = JSONDecoder()
+//                    if let safeData = data {
+//                        do {
+//                            let statsGotten = try decoder.decode(Stats.self, from: safeData)
+//                            self.delegate?.didUpdateInfo(self, stats: statsGotten.result)
+//                        } catch {
+//                            print(error)
+//                        }
+//                    }
+//                }
+//            }
+//            task.resume()
+//        }
+//
+//    }
+    
+    
+    
+    
+}
+
+
+
+//MARK: - Fetch All Teams Helper Methods
+extension TeamsMultipleModel {
     
     // Fetch Teams
     func fetchTeams() {
@@ -80,7 +71,7 @@ struct TeamsMultipleModel {
                     
                     if let safeData = sizeData {
                         do {
-                            let statsGotten = try decoder.decode(TeamStats.self, from: safeData)
+                            let statsGotten = try decoder.decode(Stats.self, from: safeData)
                             print(statsGotten.size)
                             totalTeams = statsGotten.size
                             print(totalTeams!)
@@ -133,7 +124,7 @@ struct TeamsMultipleModel {
                                     print("Left Individual")
                                 }
                                 
-                                let statsGotten = try decoder.decode(TeamStats.self, from: safeData)
+                                let statsGotten = try decoder.decode(Stats.self, from: safeData)
                                 
                                 DispatchQueue.main.async {
                                     infoArray = Array(Set(infoArray + statsGotten.result))

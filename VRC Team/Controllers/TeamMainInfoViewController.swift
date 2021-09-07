@@ -15,6 +15,8 @@ class TeamMainInfoViewController: UITableViewController {
     var mainInfoTableData: [IndividualTeamTableInfo] = [IndividualTeamTableInfo]()
     var seasonInfoTableData: [SeasonInfo] = [SeasonInfo]()
     
+    var seasonPicked: Int = 0
+    
     var seasonInfoModel = SeasonInfoModel()
         
 
@@ -29,7 +31,7 @@ class TeamMainInfoViewController: UITableViewController {
         
         seasonInfoModel.delegate = self
         
-        title = team?.number
+        title = team!.number
         
         addMainTeamInfoToArray()
         
@@ -43,6 +45,15 @@ class TeamMainInfoViewController: UITableViewController {
         
     }
     
+    
+    override func viewWillAppear(_ animated: Bool) {
+        title = team!.number
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        title = "Back"
+    }
+    
     //MARK: - Main Team Info
     func addMainTeamInfoToArray() {
         
@@ -54,6 +65,14 @@ class TeamMainInfoViewController: UITableViewController {
         mainInfoTableData.append(IndividualTeamTableInfo(content: /* Region */ Constants.teamMainInfoGroupNames[5], value: team?.region ?? ""))
         mainInfoTableData.append(IndividualTeamTableInfo(content: /* Country */ Constants.teamMainInfoGroupNames[6], value: team?.country ?? ""))
         
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if (indexPath.section == 1) {
+            seasonPicked = indexPath.row
+            print("REACHED THE SEGUE");
+            performSegue(withIdentifier: Constants.segueFromTeamToSeasonPerformance, sender: self)
+        }
     }
 
     // MARK: - Table view data source
@@ -94,6 +113,12 @@ class TeamMainInfoViewController: UITableViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destination.
         // Pass the selected object to the new view controller.
+        
+        if segue.identifier == Constants.segueFromTeamToSeasonPerformance {
+            let destinationVC = segue.destination as! SeasonViewController
+            destinationVC.team = team
+            destinationVC.seasonInfo = seasonInfoTableData[seasonPicked]
+        }
     }
 
 }

@@ -46,7 +46,7 @@
                 <outlet property="contentLabel" destination="EMB-uw-wdZ" id="zqc-bo-J2h"/>
                 <outlet property="valueLabel" destination="Pyn-Rv-8EJ" id="T8V-no-E8f"/>
             </connections>
-            <point key="canvasLocation" x="-78" y="23"/>
+            <point key="canvasLocation" x="-78.260869565217391" y="22.767857142857142"/>
         </tableViewCell>
     </objects>
 </document>
